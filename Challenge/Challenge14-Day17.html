@@ -1,0 +1,41 @@
+
+// Lecture Day 17 ... 
+// Challenge 2...
+
+*/
+This is more of a thinking challenge than a coding challenge
+Your tasks:
+1. Take the IIFE below and at the end of the function, attach an event listener that changes the color of the
+selected
+h1 element ('header') to blue, each time the body element is clicked. Do not select the h1 element again!
+
+2. And now explain to yourself (or someone around you) why this worked! Take all the time you need. Think about when
+exactly the callback function is executed, and what that means for the variables involved in this example.
+*/
+// Solution...
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIFE Closure Example</title>
+</head>
+
+<body>
+
+  <body style="background-color: rgb(24, 218, 72);"></body>
+  <h1>A Closer Look at Function!</h1>
+
+  <script>
+    (function () {
+      const header = document.querySelector('h1'); // Select once
+
+      document.querySelector('body').addEventListener('click', function () {
+        header.style.color = 'blue'; // Closure keeps reference to header
+      });
+    })();
+  </script>
+</body>
+
+</html>
