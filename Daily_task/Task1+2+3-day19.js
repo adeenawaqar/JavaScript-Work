@@ -1,0 +1,9 @@
+// Day 19 Lecture...
+// The Magic of Chaining Method...
+
+// pipeLine...
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const EuroToUsd = 1.1;
+const TotalDepositeUSD = movements.filter(mov => mov > 0).map(mov => mov * EuroToUsd).reduce((acc, mov) => acc + mov, 0);
+console.log(TotalDepositeUSD);
+
